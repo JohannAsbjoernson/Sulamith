@@ -1,11 +1,12 @@
-#SULAMITH
-####USER MANUAL FOR VCV-RACK MODULE COLLECTION
-SULAMITH IS FOCUSED ON PROVIDING VERSATILE, SMALL UTILITIES & MICRO SEQUENCERS.
+# SULAMITH
+------------
+#### USER MANUAL FOR VCV-RACK MODULE COLLECTION
+SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.
 
-
+------------
 
 ## BUTTON
-![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")
+<p style="text-align: center;">![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")</p>
 
 Button is a multi-functional trig-driven utility module.
 -  **Manual TRIG** button
@@ -49,9 +50,9 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 ****SLEW for Random CV** (context menu). A fixed slew amount applied for a fast Attack-Decay style envelope. Slew is slightly influenced by Range (the higher the range, the slower the slew and vice versa).*
 
 ****SLEW for Gates**  (context menu). Fixed slew amount for a fast Attack-Decay style envelope. Slew is slightly influenced by Gate length (the longer the gate, the slower the slew and vice versa).
-*Gate lengths below 0.35s will go low before slew can reach 10v.Everything above will reach 10v before slewing down again.*
+*Gate lengths below 0.35s will go low before slew can reach 10v.Everything above will reach 10v before slewing down again.*
 
-![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
+<p style="text-align: center;">![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")</p>
 
 
 ------------
@@ -66,7 +67,7 @@ Depending on the clock input: gates of the same length will go out of sync when 
 
 To fix this just send the Slewed Gate output to an Input of the other Button module.
 The OR-Logic inputs will ignore incoming Triggers as long as one input is high.
-This enforces RETRIG OFF on the left Button, which might cause problems in other places (if a clock that should generate CV is ignored). Just add a third module if that should happen.
+This enforces RETRIG OFF on the left Button, which might cause problems in other places (if a clock that should generate CV is ignored). Just add a third module if that should happen.
 
 ------------
 
