@@ -1,5 +1,5 @@
- #**Sulamith**
- ##**VCV Rack 2 Module Collection Changelog**
+ **Sulamith**
+ **VCV Rack 2 Module Collection Changelog**
 
 **version 2.0.1**
 * added more slew variations, decreased decay
