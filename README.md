@@ -1,6 +1,4 @@
 # SULAMITH
-------------
-
 ### USER MANUAL FOR VCV-RACK MODULE COLLECTION
 <p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
@@ -53,7 +51,7 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 ****SLEW for Gates**  (context menu). Fixed slew amount for a fast Attack-Decay style envelope. Slew is slightly influenced by Gate length (the longer the gate, the slower the slew and vice versa).
 *Gate lengths below 0.35s will go low before slew can reach 10v.Everything above will reach 10v before slewing down again.*
 
-<p style="text-align: center;">![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")</p>
+![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
 
 
 ------------
