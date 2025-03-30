@@ -55,7 +55,7 @@ Gate lengths below 0.35s will go low before slew can reach 10v.Everything above 
 
 
 ------------
-##### KNOWN PROBLEMS
+#### KNOWN PROBLEMS
 **Slewed Gates out of Sync with regular Gates** (see Image B):
 ReTrig is off by default for custom length Gates: and that extends to slew.
 A (custom) Gate can only be triggered when it is low (0v).
@@ -68,7 +68,7 @@ To fix this just send the Slewed Gate output to an Input of the other Button mod
 
 ------------
 
-##### TO-DO
+#### TO-DO
 	Context-Menu: set Input 2 to be a Poly CV input sent to A/B Toggle outputs
 	Context-Menu: set A/B Toggle to a Bogaudio-Style temporary Switch Toggles A as long as input is high, Toggles to B as soon as input is low
 	Context-Menu: add Slew to A/B Toggle (to add a crossfade effect)
