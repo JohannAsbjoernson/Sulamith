@@ -46,10 +46,9 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 
 **ReTrig** * can be enabled/disabled globally via the **context menu**. Disabling ReTrig will only apply if a custom Gate Length is set. Then: incoming Clock signals will be ignored until Gate is low again. Disabling ReTrig globally comes in handy when using custom Gates with the Random Voltages for sequencing (to sync vOct generation & Trig to Gate)
 
-**SLEW for Random CV** ** (context menu). A fixed slew amount applied for a fast Attack-Decay style envelope. Slew is slightly influenced by Range (the higher the range, the slower the slew and vice versa).
+**SLEW for Random CV** ** (context menu). Fixed slew amount for a fast Attack-Release style envelope. Slew amount is tied to CV Range setting. The bigger the range the slower the Slew. Decay is slightly shorter than Attack.
 
-**SLEW for Gates** ** (context menu). Fixed slew amount for a fast Attack-Decay style envelope. Slew is slightly influenced by Gate length (the longer the gate, the slower the slew and vice versa).
-Gate lengths below 0.35s will go low before slew can reach 10v.Everything above will reach 10v before slewing down again.
+**SLEW for Gates** ** (context menu).  Fixed slew amount for a fast Attack-Release style envelope. Slew is tied to Gate length. The longer the gate, the slower the slew. Decay is noticably shorter than Attack.
 
 ![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
 

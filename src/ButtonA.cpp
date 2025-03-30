@@ -45,8 +45,7 @@ struct ButtonA : Module
 
     bool TG = true, GTD = false, RTRIG = false, RTRIG2 = false, BOOLSLEW = false, CEVESLEW = false;
     float RNG = 5.0, SH1 = 0.0f, SH2 = 0.0f, SH1A = 0.0f, SH2A = 0.0f;
-
-    std::string label = "SCHULA";
+    std::string label = "";
     bool change = false;
 
     json_t *dataToJson() override
@@ -104,9 +103,9 @@ struct ButtonA : Module
         lights[TR_LIGHT].setBrightness(0.f), lights[GT_LIGHT].setBrightness(0.f);
         lights[TG_LIGHT].setBrightness(1.f), lights[TGINV_LIGHT].setBrightness(0.f);
         TG = true, GTD = false;
-        label = "SCHULA", change = true;
+        label = "SOLOMO", change = true;
     }
-
+    int s3 = 0;
     void process(const ProcessArgs &args) override
     {
         // VARIABLES, PARAMS, TIME
@@ -124,6 +123,8 @@ struct ButtonA : Module
         TRIGR = TRout.process(deltaTime);
         GTA = gateGenerator.process(deltaTime) ? true : false;
         GTL = params[GT_PARAM].getValue();
+        if (GTL < 0.2f && GTL > 0.f)
+            GTL = 0.2f;
 
         // SLEW AND RETRIG PREPARATIONS
         if (GTA && BOOLSLEW)
@@ -174,16 +175,33 @@ struct ButtonA : Module
             GTD = false;
 
         // GATE AND CV SLEW SETTINGS & PROCESS
-        gateSlew.setRiseFall(30 - (GTL * 1.5), 30 - (GTL * 1.5));
+        // float slewtime = 20;
+        float s2[8] = {80, 55, 40, 30, 20, 17, 15, 13}, s1[9] = {0.3, 0.8, 2.3, 4.5, 6, 7.5, 9, 10.01, 10.01};
+        float slewtime2 = 13;
+
         if (BOOLSLEW)
-            GTSLEW = gateSlew.process(deltaTime, GTGO) * 1.f;
-        civiSlew.setRiseFall(14 - TGv2, 14 - TGv2);
-        ceviSlew.setRiseFall(14 - TGv2, 14 - TGv2);
-        if (CEVESLEW)
         {
-            CVSLEW = civiSlew.process(deltaTime, SH1A) * 1.f;
-            CVSLEW2 = ceviSlew.process(deltaTime, SH2A) * 1.f;
+            while ((params[GT_PARAM].getValue() > s1[s3]) && (params[GT_PARAM].getValue() < s1[s3 + 1]))
+                s3++;
+            if (s3 >= 8)
+                s3 = 0;
+            gateSlew.setRiseFall(s2[s3] - GTL, s2[s3] - (GTL * 0.7));
         }
+        GTSLEW = clamp(gateSlew.process(deltaTime, GTGO), 0.f, 10.f);
+
+        if (TGS != 0 && CEVESLEW)
+        {
+            if (TGv <= 2)
+                slewtime2 = 14;
+            else if (TGv <= 6)
+                slewtime2 = 11;
+            else if (TGv > 6)
+                slewtime2 = 9;
+            civiSlew.setRiseFall(slewtime2 - TGv2, slewtime2 - (TGv2 * 0.9));
+            ceviSlew.setRiseFall(slewtime2 - TGv2, slewtime2 - (TGv2 * 0.9));
+        }
+        CVSLEW = civiSlew.process(deltaTime, SH1A);
+        CVSLEW2 = ceviSlew.process(deltaTime, SH2A);
 
         // OUTPUTS
         outputs[TR_OUTPUT].setVoltage(TRIGR ? 10.0 : 0.0);
