@@ -1,13 +1,13 @@
 # SULAMITH
 ------------
 
-### <p style="text-align: center;">USER MANUAL FOR VCV-RACK MODULE COLLECTION</p>
-<p style="text-align: center;">SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
+### USER MANUAL FOR VCV-RACK MODULE COLLECTION
+<p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
 ------------
 
 ## BUTTON
-<p style="text-align: center;">![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")</p>
+![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")
 
 Button is a multi-functional trig-driven utility module.
 -  **Manual TRIG** button
