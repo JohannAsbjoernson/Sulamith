@@ -1,7 +1,7 @@
 {
     "slug": "Sulamith",
     "name": "Sulamith",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "license": "GPL-3.0-or-later",
     "brand": "Sulamith",
     "author": "Pascal Breitenbach",
@@ -15,15 +15,15 @@
         {
             "slug": "ButtonA",
             "name": "Button - Complex Trigger Utility",
-            "description": "Swiss Army Knife: BUTTON | PROBABILITY | TRIGGER | GATE | GT LENGTH | A/B-TOGGLE | CONSTANT VOLTAGE | RANDOM CV (bi/uni, range) | SLEW | RETRIG",
-            "manualUrl": "",
+            "description": "Swiss Army Knife: Button, Bernoulli Gate, Trigger, Gate with Length, Toggle, Const. Volt., Random CV, Slew, Retrig",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/blob/main/README.md",
             "tags": [
                 "Utility",
                 "Random",
                 "Sequencer",
                 "Clock modulator",
                 "Logic",
-                "Controller, "
+                "Controller"
             ]
         }
     ]
