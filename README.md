@@ -3,12 +3,13 @@
 <p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
 ------------
-## MODULES:
--- [BUTTON](#button)
--- [KNOBS](#knobs)
--- [VOLT](#volt)
--- [MERGE & SPLIT](#merge--split)
--- [BLANK](#blank)
+### TABLE OF CONTENT:
+	- [BUTTON](#button)
+	- [KNOBS](#knobs)
+	- [VOLT](#volt)
+	- [MERGE \& SPLIT](#merge--split)
+	- [BLANK](#blank)
+	- [TO-DO](#to-do)
 
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
