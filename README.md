@@ -4,11 +4,11 @@
 
 ------------
 ## MODULES:
-### [BUTTON](#button)
-### [KNOBS](#knobs)
-### [VOLT](#volt)
-### [MERGE & SPLIT](#merge--split)
-### [BLANK](#blank)
+-- [BUTTON](#button)
+-- [KNOBS](#knobs)
+-- [VOLT](#volt)
+-- [MERGE & SPLIT](#merge--split)
+-- [BLANK](#blank)
 
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
