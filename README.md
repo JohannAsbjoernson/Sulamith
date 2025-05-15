@@ -108,8 +108,10 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 
 ------------
 ## BLANK
-A 6hp Blank Panel using an antifacist meme. Found in the antifacist logo archive on instagram, sold as stickers and buttons via blackmosquito and as hardware blank panel by tangible waves.
 ![Blank](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20Blank.jpg "Blank")
+
+A **6hp Blank Panel** using an antifacist meme.
+Found in the **antifacist logo archive** on instagram, sold as stickers and buttons via **blackmosquito** and as hardware blank panel by **tangible waves**.
 [Tangible Waves Shop](https://www.tangiblewaves.com/store/p228/Blank_module_2U_%22MODULAR_ANTIFA%22.html "Tangible Waves")
 
 
