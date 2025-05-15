@@ -3,8 +3,13 @@
 <p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
 ------------
-## MODULES
-### BUTTON | KNOBS | VOLT | MERGE & SPLIT | BLANK
+## MODULES:
+### 1. [BUTTON](#button)
+### 2. [KNOBS](#knobs)
+### 3. [VOLT](#volt)
+### 4. [MERGE & SPLIT](#merge--split)
+### 5. [BLANK](#blank)
+
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
 ## BUTTON
@@ -103,16 +108,33 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 
 ------------
 ## BLANK
+A 6hp Blank Panel using an antifacist meme. Found in the antifacist logo archive on instagram, sold as stickers and buttons via blackmosquito and as hardware blank panel by tangible waves.
 ![Blank](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20Blank.jpg "Blank")
+[Tangible Waves Shop](https://www.tangiblewaves.com/store/p228/Blank_module_2U_%22MODULAR_ANTIFA%22.html "Tangible Waves")
+
+
+------------
 
 #### TO-DO
-	Context-Menu: set Input 2 to be a Poly CV input sent to A/B Toggle outputs
+	Modules to add:
+	Comparator/Poly Signal Splitter
+	Poly 2 Mono Sequencer
+	Gate Length Sequencer
+
+	Comparator:
+	Context Menu: Polyphony sorting
+	Second Poly Signal in for swapping
+
+	Knobs:
+	Context-Menu: Quantisation
+	Context-Menu: Replace Reset with Random input
+
+	Button:
 	Context-Menu: set A/B Toggle to a Bogaudio-Style temporary Switch Toggles A as long as input is high, Toggles to B as soon as input is low
 	Context-Menu: add Slew to A/B Toggle (to add a crossfade effect)
 	Context-Menu: Slew short / medium option
 	Context-Menu: Slew all on/off
 	Panel: write whats what on it
-	Context-Menu: merge ON OFF options into Toggles (ON/OFF)
 	Context-Menu: Add Global Settings
 
 MORE TO COME!
