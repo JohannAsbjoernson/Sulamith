@@ -21,6 +21,10 @@ using namespace rack;
 extern Plugin *pluginInstance;
 
 extern Model *modelButtonA;
-
+extern Model *modelVoltM;
+extern Model *modelKnobX;
+extern Model *modelAntifaQ;
+extern Model *modelMerge;
+extern Model *modelSplit;
 //  just add new modules below in the same fashion.
 //  extern Model *modelCVSeq; etc.

@@ -3,6 +3,9 @@
 <p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
 ------------
+## MODULES
+### BUTTON | KNOBS | VOLT | MERGE & SPLIT | BLANK
+![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
 ## BUTTON
 ![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")
@@ -52,20 +55,55 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 
 ![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
 
+------------
+## KNOBS
+![Knobs](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/003%20Knobs.jpg "Knobs")
+
+**Knobs is an 8 channel poly voltage source & 8 step sequencer**
+-  global **Probability** knob
+- **Forward/Backward/Random** sequencing mode
+- **Poly Steal** - when a poly cable is plugged into reset in a button/clock trig will copy inputs to knobs (Sample & Hold style)
+- **CH/Step** can be set 1-8
+- **Range** can be adjusted (-10+10,-5+5, -3+3, -2+2, -1+1, 0-1, 0-2, 0-3, 0-5, 0-10)
+- **8 Knobs** for poly cv or mono modulations/sequencing
+- **Trigger**, **Poly** and **Sequence** outputs
+- manual **Button**, **CLK/TRG/GT** and **Reset** inputs
+
+**Knobs** is a Constant Voltage Source with added sequencing features.
+**Voltage Source**:
+With adjustable range, channel number, control LEDs and poly input steal.
+Similar to Bogaudio Polycon but with a few more features.
+
+**Sequencer**:
+There are surprisingly few light-weight, small scale sequencers in VCV Rack, so this is supposed to fill the gap a little.
+Clock & Reset, Sequencing Mode, Max Steps, Range, Probability and Step LEDs - all with Trigger, Sequence and Poly out.
+Randomization (CTRL+R) only affects the Knobs.
+Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply Probability to turn Knobs into a generative Sequencer.
 
 ------------
-#### KNOWN PROBLEMS
-**Slewed Gates out of Sync with regular Gates** (see Image B):
-ReTrig is off by default for custom length Gates: and that extends to slew.
-A (custom) Gate can only be triggered when it is low (0v).
-Decaying slew is applied to the trailing edge, extending the gates length.
-Depending on the clock input: gates of the same length will go out of sync when one module uses Slew and the other doesn't (image B).
+## VOLT
+![Volt](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/004%20Volt.jpg "Volt")
 
-![Slewed and Unslewed Gate fix](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/003%20Button.jpg "Slewed and Unslewed Gate fix")
-
-To fix this just send the Slewed Gate output to an Input of the other Button module. The OR-Logic inputs will ignore incoming Triggers as long as one input is high. This enforces RETRIG OFF on the left Button, which might cause problems in other places (if a clock that should generate CV is ignored). Just add a third module if that should happen.
+**Volt is a polyphonic Multi-Volt-Meter**
+- **Polyphonic inputs**
+- **Display** for up to 16 Voltages
+- **Merging output** stacks incoming poly Signals
 
 ------------
+## MERGE & SPLIT
+![MergeSplit](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/005%20MergeSplit.jpg "MergeSplit")
+
+**A 16 channel Merge & 16 channel Split**
+- **Compact Layout**
+- **Control LEDs**
+ZigZagged ports & minimalistic design in 3hp, since something like this was missing.
+
+Note: Merge -> Context Menu offers channel selection: -1 (Auto) & 0 to 16. For now you can only automate this using Stoermelders 8Face.
+Since the inputs are still monophonic at this point, the feature doesn't make much sense.
+
+------------
+## BLANK
+![Blank](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20Blank.jpg "Blank")
 
 #### TO-DO
 	Context-Menu: set Input 2 to be a Poly CV input sent to A/B Toggle outputs
