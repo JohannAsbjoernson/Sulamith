@@ -42,7 +42,7 @@ struct ButtonA : Module
     dsp::PulseGenerator TRout, gateGenerator;
     dsp::SlewLimiter gateSlew, civiSlew, ceviSlew;
 
-    bool TG = true, GTD = false, RTRIG = false, RTRIG2 = false, BOOLSLEW = false, CEVESLEW = false, STARTUP = true;
+    bool TG = true, GTD = false, RTRIG = false, RTRIG2 = false, BOOLSLEW = false, CEVESLEW = false, STARTUP = true, RNDDIST = false;
     float RNG = 5.0, SH1 = 0.0f, SH2 = 0.0f, SH1A = 0.0f, SH2A = 0.0f, NAMEBTNold = 0.0f;
     int s3 = 0;
     std::string label = "";
@@ -56,6 +56,7 @@ struct ButtonA : Module
         json_object_set_new(rootJ, "RTRIG", json_boolean(RTRIG));
         json_object_set_new(rootJ, "BOOLSLEW", json_boolean(BOOLSLEW));
         json_object_set_new(rootJ, "CEVESLEW", json_boolean(CEVESLEW));
+        json_object_set_new(rootJ, "RNDDIST", json_boolean(RNDDIST));
 
         return rootJ;
     }
@@ -76,6 +77,8 @@ struct ButtonA : Module
         BOOLSLEW = json_boolean_value(gtslewJ);
         json_t *cvslewJ = json_object_get(rootJ, "CEVESLEW");
         CEVESLEW = json_boolean_value(cvslewJ);
+        json_t *rnddistJ = json_object_get(rootJ, "RNDDIST");
+        RNDDIST = json_boolean_value(rnddistJ);
     }
 
     ButtonA()
@@ -138,42 +141,6 @@ struct ButtonA : Module
         if (GTL < 0.2f && GTL > 0.f)
             GTL = 0.2f;
 
-        // AUTO NAMING
-        float NAMEBTN = params[NAME_PARAM].getValue();
-        if (NAMEBTN > 0.f && (NAMEBTNold != NAMEBTN))
-        {
-            NAMEBTNold = NAMEBTN;
-            if (label != "")
-                label = "", change = true;
-            std::string txtlabel[21] = {
-                "SOLOMON",
-                "MISCHPOKE",
-                "CHUZPE",
-                "ROCHUS",
-                "TINNEF",
-                "SULAMITH",
-                "ZORES",
-                "SCHICKSE",
-                "MATZEN",
-                "GANOVE",
-                "STUSS",
-                "ZOFF",
-                "MACKE",
-                "SCHMIRA",
-                "KVELL",
-                "MAZEL",
-                "BUBBE",
-                "GEVALT",
-                "OY OY",
-                "PLOTZ",
-                "ZAFTIG"};
-            int rndlabel = std::floor(random::uniform() * 10);
-            label = txtlabel[rndlabel];
-            change = true;
-        }
-        else
-            NAMEBTNold = NAMEBTN;
-
         // SLEW AND RETRIG PREPARATIONS
         if (GTA && BOOLSLEW)
             GTGO = 10.f;
@@ -203,9 +170,16 @@ struct ButtonA : Module
             if (GTL > 0.f && !GTA && !SLEWING)
                 gateGenerator.trigger(GTL);
 
-            SH1 = random::uniform();
-            SH2 = random::uniform();
-
+            if (!RNDDIST)
+            {
+                SH1 = random::uniform();
+                SH2 = random::uniform();
+            }
+            else if (RNDDIST)
+            {
+                SH1 = random::normal() / 2.5f;
+                SH2 = random::normal() / 2.5f;
+            }
             if (TGS == 1)
             {
                 SH1A = (0.5 > random::uniform() ? SH1 : -SH1) * TGv;
@@ -225,7 +199,7 @@ struct ButtonA : Module
         // GATE AND CV SLEW SETTINGS & PROCESS
         // float slewtime = 20;
         float s2[8] = {70, 45, 30, 20, 17, 15, 13, 10}, s1[9] = {0.3, 0.8, 2.3, 4.5, 6, 7.5, 9, 10.01, 10.01};
-        float slewtime2 = 13;
+        float slewtime2 = 16;
 
         if (BOOLSLEW)
         {
@@ -240,17 +214,17 @@ struct ButtonA : Module
         if (TGS != 0 && CEVESLEW)
         {
             if (TGv <= 2)
-                slewtime2 = 14;
+                slewtime2 = 20;
             else if (TGv <= 6)
-                slewtime2 = 11;
+                slewtime2 = 17;
             else if (TGv > 6)
-                slewtime2 = 9;
+                slewtime2 = 13;
             civiSlew.setRiseFall(slewtime2 - TGv, slewtime2 - (TGv * 0.9));
             ceviSlew.setRiseFall(slewtime2 - TGv2, slewtime2 - (TGv2 * 0.9));
         }
-        CVSLEW = civiSlew.process(deltaTime, SH1A);
-        CVSLEW2 = ceviSlew.process(deltaTime, SH2A);
-        float CVSLEW3 = CVSLEW / 10.f, CVSLEW4 = CVSLEW2 / 10.f;
+        CVSLEW = civiSlew.process(deltaTime, SH1A), CVSLEW = clamp(CVSLEW, -TGv, TGv);
+        CVSLEW2 = ceviSlew.process(deltaTime, SH2A), CVSLEW2 = clamp(CVSLEW2, -TGv2, TGv2);
+        // float CVSLEW3 = CVSLEW * 10.f, CVSLEW4 = CVSLEW2 * 10.f;
 
         // OUTPUTS
         outputs[TR_OUTPUT].setVoltage(TRIGR ? 10.0 : 0.0);
@@ -269,8 +243,8 @@ struct ButtonA : Module
         }
         else if (TGS != 0 && CEVESLEW)
         {
-            outputs[TG_OUTPUT].setVoltage(CVSLEW3);
-            outputs[TGINV_OUTPUT].setVoltage(CVSLEW4);
+            outputs[TG_OUTPUT].setVoltage(CVSLEW);
+            outputs[TGINV_OUTPUT].setVoltage(CVSLEW2);
         }
         else if (TGS != 0 && !CEVESLEW)
         {
@@ -309,6 +283,42 @@ struct ButtonA : Module
             lights[TG_LIGHT].setSmoothBrightness(SH1, deltaTime);
             lights[TGINV_LIGHT].setSmoothBrightness(SH2, deltaTime);
         }
+
+        // AUTO NAMING
+        float NAMEBTN = params[NAME_PARAM].getValue();
+        if (NAMEBTN > 0.f && (NAMEBTNold != NAMEBTN))
+        {
+            NAMEBTNold = NAMEBTN;
+            if (label != "")
+                label = "", change = true;
+            std::string txtlabel[21] = {
+                "SOLOMON",
+                "MISCHPOKE",
+                "CHUZPE",
+                "ROCHUS",
+                "TINNEF",
+                "SULAMITH",
+                "ZORES",
+                "SCHICKSE",
+                "MATZEN",
+                "GANOVE",
+                "STUSS",
+                "ZOFF",
+                "MACKE",
+                "SCHMIRA",
+                "KVELL",
+                "MAZEL",
+                "BUBBE",
+                "GEVALT",
+                "OY OY",
+                "PLOTZ",
+                "ZAFTIG"};
+            int rndlabel = std::floor(random::uniform() * 10);
+            label = txtlabel[rndlabel];
+            change = true;
+        }
+        else
+            NAMEBTNold = NAMEBTN;
     }
 };
 // TEXT INPUT LABEL
@@ -406,6 +416,7 @@ struct ButtonAWidget : ModuleWidget
         menu->addChild(createBoolPtrMenuItem("Global Retrig", "", &module->RTRIG));
         menu->addChild(createBoolPtrMenuItem("Add Slew to custom Gates", "", &module->BOOLSLEW));
         menu->addChild(createBoolPtrMenuItem("Add Slew to random CV", "", &module->CEVESLEW));
+        menu->addChild(createBoolPtrMenuItem("Rnd::normal (default: uniform)", "", &module->RNDDIST));
     }
 };
 

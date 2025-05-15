@@ -5,6 +5,8 @@
 - added Knobs - Const. volt source and Sequencer
 - added Volt - Poly-Multi Voltage Meter (based on ComputerScare Debug)
 - added Split and Merge
+##Button:
+- added random::uniform / random::normal option to context-menu
 
 ##version 2.0.9
 ##Button:

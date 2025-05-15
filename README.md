@@ -3,13 +3,14 @@
 <p style="text-align: center;"> SULAMITH IS FOCUSED ON PROVIDING VERSATILE SMALL UTILITIES & MICRO SEQUENCERS.</p>
 
 ------------
-### TABLE OF CONTENT:
-	- [BUTTON](#button)
-	- [KNOBS](#knobs)
-	- [VOLT](#volt)
-	- [MERGE \& SPLIT](#merge--split)
-	- [BLANK](#blank)
-	- [TO-DO](#to-do)
+### TABLE OF CONTENTS:
+### [BUTTON](#button)
+### [KNOBS](#knobs)
+### [VOLT](#volt)
+### [MERGE \& SPLIT](#merge--split)
+### [BLANK](#blank)
+
+### [TO-DO](#to-do)
 
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
@@ -19,19 +20,18 @@
 (NOTE: Button manual is out of date, changes will be incorporated sometime soon)
 
 **Button is a multi-functional trig-driven utility module.**
--  **Manual TRIG** button
-- 2 **CLK/TRG/GT** inputs
+- **Manual TRIG** button
+- **CLK/TRG/GT** inputs
 - **Probability** (applied globally to all outputs)
-- **TRIG** output
-- **GATE** output
-- **GATE length** knob (0.1s-10s)
+- **TRIG** output & **GATE** output
+- **GATE length** knob (0 = Auto | Range: 0.2s-10s)
 - **A & B** outputs act as **Toggle**, **Constant Voltage** Source or **Random Voltage**
-- **Constant Voltage** or **Random Voltage Range** knob (1 to 10/-1v+1v to -5v+5v/0v to 10v)
+- **A & B Constant Voltage** or **Random Voltage Range** knobs (1-10)
 - **Mode Switch** for A & B: **Toggle, RND bipolar, RND unipolar**
-- Text input for **LABELING**.
-- **RETRIG** options in right-click menu*
-- **SLEW** for **custom length Gates** in right-click menu**
-- **SLEW** for **bi- and unipolar Random Voltages** in right-click menu**
+- Text input for **LABELING**
+- **RETRIG** options in right-click menu
+- **SLEW** for **custom length Gates** in right-click menu
+- **SLEW** for **bi- and unipolar Random Voltages** in right-click menu
 
 **Buttons** can be used in many capacities:
 As a **Manual** and/or **CLK/TRG/GT** driven **Trigger generator, manual Gate, Trigger to Gate** converter, **Clock randomizer** (similar to a Bernoulli Gate), **constant Voltage** source, **on/off Toggle**, **Random Voltage generator** & **random trig/gate/cv/note Sequencer**, **slewed Gates** for opening VCAs, **slewed RND** for smoother modulation.
@@ -46,18 +46,19 @@ When the **Gate Length** knob is turned all the way CCW (0 (default)), Gate will
 Turning **Gate Length** up will set a **custom Gate. Custom Gates** are ignoring Re-Triggers and run the set duration (0.1s - 10s).
 
 **A/B Mode 1**:
-**Toggle** is a simple **A/B Switch** with a knob setting its Output Voltage (1-10v, 10v default).
-Just ON/OFF or OFF/ON. Using the Voltage knob turns it into a **Constant Voltage** source or a Tool for Transposition of Sequences.
+**Toggle** is a simple **A/B Switch** (when triggered). Dedicated knobs set output Voltage for A/B when high (1-10v, 10v default).
+Using the Voltage knob turns it into a **Constant Voltage** source. Mainly used for transposition of v/Oct signals.
 
-**A/B Mode 2** (bi) + 3 (uni):
-**Random** can be either bi- or unipolar and will generate two random CV signals on A and B output each. The Voltage knob sets the range. Bipolar 10 will be -5v to +5v whereas unipolar 10 is 0v to +10v.
-Can be used as** CV Modulators** or **Random Note Sequencers**.  The Trig/Gate outs can trigger envelopes on changing notes, probability makes this a generative sequencer.
+**A/B Mode 2 and 3**:
+**Random** bi- or unipolar.
+generates two random CV signals on A and B output each. Dedicated knobs set the range. Bipolar 10 will be -10v to +10v.
+Can be used as **CV Modulators** or **Random Note Sequencers**.
+**random::uniform** (default) and **random::normal** option in context menu.
+**adaptive SLEW** option in context menu. (slew intensifies at higher and shortens at lower ranges)
 
 Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works and can be useful when using multiple instances of Button in your patch. i.e.: for Muting.
 
 **ReTrig** * can be enabled/disabled globally via the **context menu**. Disabling ReTrig will only apply if a custom Gate Length is set. Then: incoming Clock signals will be ignored until Gate is low again. Disabling ReTrig globally comes in handy when using custom Gates with the Random Voltages for sequencing (to sync vOct generation & Trig to Gate)
-
-**SLEW for Random CV** ** (context menu). Fixed slew amount for a fast Attack-Release style envelope. Slew amount is tied to CV Range setting. The bigger the range the slower the Slew. Decay is slightly shorter than Attack.
 
 **SLEW for Gates** ** (context menu).  Fixed slew amount for a fast Attack-Release style envelope. Slew is tied to Gate length. The longer the gate, the slower the slew. Decay is noticably shorter than Attack.
 
