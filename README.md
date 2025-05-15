@@ -4,16 +4,18 @@
 
 ------------
 ## MODULES:
-### 1. [BUTTON](#button)
-### 2. [KNOBS](#knobs)
-### 3. [VOLT](#volt)
-### 4. [MERGE & SPLIT](#merge--split)
-### 5. [BLANK](#blank)
+### [BUTTON](#button)
+### [KNOBS](#knobs)
+### [VOLT](#volt)
+### [MERGE & SPLIT](#merge--split)
+### [BLANK](#blank)
 
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
 ## BUTTON
 ![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")
+
+(NOTE: Button manual is out of date, changes will be incorporated sometime soon)
 
 **Button is a multi-functional trig-driven utility module.**
 -  **Manual TRIG** button
