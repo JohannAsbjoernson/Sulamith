@@ -170,7 +170,6 @@ struct BTSwitch : app::SvgSwitch
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BS0.svg")));
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BS1.svg")));
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BS2.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BS3.svg")));
     }
 };
 struct SGB : app::SvgSwitch
