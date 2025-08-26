@@ -71,6 +71,7 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 
 ![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
 
+[Back to Top](#table-of-contents)
 ------------
 ## CLOCK
 ![Clock](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/004%20Clock.jpg "Clock")
@@ -81,6 +82,7 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 - **Div** /32 to **Mult** x32
 - Four **Clock** outputs
 
+[Back to Top](#table-of-contents)
 ------------
 ## KNOBS
 ![Knobs](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/003%20Knobs.jpg "Knobs")
@@ -106,6 +108,7 @@ Clock & Reset, Sequencing Mode, Max Steps, Range, Probability and Step LEDs - al
 Randomization (CTRL+R) only affects the Knobs.
 Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply Probability to turn Knobs into a generative Sequencer.
 
+[Back to Top](#table-of-contents)
 ------------
 ## GTSEQ
 ![GTSeq](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/005%20GTSeq.jpg "GTSeq")
@@ -117,6 +120,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **STEP PROBABILITY** (0%-100%)
 - 6 **GATES** from 0.1s to 10.0s
 
+[Back to Top](#table-of-contents)
 ------------
 ## P2SEQ
 ![P2Seq](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20P2Seq.jpg "P2Seq")
@@ -130,6 +134,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **RND CV RANGE**
 - **LED DISPLAY** if step is skipped, rnd cv added, 16 LED Matrix showing input channels and active step
 
+[Back to Top](#table-of-contents)
 ------------
 
 ## VOLT
@@ -140,6 +145,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **Display** for up to 16 Voltages
 - **Merging output** stacks incoming poly Signals
 
+[Back to Top](#table-of-contents)
 ------------
 
 ## NOTE
@@ -150,6 +156,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **Chromatic** mode quantizes signals to nearest note (to display and output)
 - **Display** for up to 16 notes
 
+[Back to Top](#table-of-contents)
 ------------
 
 ## S&H
@@ -164,6 +171,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **PROBABILITY** 0-100% dictates if an incoming trigger is used to sample/generate or skipped.
 - **BOTTOM SECTION** copies settings of second section (quant, range, chan, prob)
 
+[Back to Top](#table-of-contents)
 ------------
 
 ## COMPARATOR
@@ -174,6 +182,7 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **A/B GATE** outputs
 - **A/B CV** outputs
 
+[Back to Top](#table-of-contents)
 ------------
 
 ## MERGE & SPLIT
@@ -187,7 +196,7 @@ ZigZagged ports & minimalistic design in 3hp, since something like this was miss
 Note: Merge -> Context Menu offers channel selection: -1 (Auto) & 0 to 16. For now you can only automate this using Stoermelders 8Face.
 Since the inputs are still monophonic at this point, the feature doesn't make much sense.
 
-
+[Back to Top](#table-of-contents)
 ------------
 
 #### TO-DO
@@ -209,3 +218,5 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 	Context-Menu: Add Global Settings
 
 MORE TO COME!
+
+[Back to Top](#table-of-contents)
