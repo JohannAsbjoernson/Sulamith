@@ -1,9 +1,9 @@
 {
-    "slug": "Sulamith2",
-    "name": "Sulamith2",
-    "version": "2.1.0",
+    "slug": "Sulamith",
+    "name": "Sulamith",
+    "version": "2.2.0",
     "license": "GPL-3.0-or-later",
-    "brand": "Sulamith2",
+    "brand": "Sulamith",
     "author": "Pascal Breitenbach",
     "authorEmail": "johann@raisedasapackofwolves.de",
     "pluginUrl": "https://github.com/JohannAsbjoernson/Sulamith",
