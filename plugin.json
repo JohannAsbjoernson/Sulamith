@@ -16,7 +16,7 @@
             "slug": "ButtonA",
             "name": "Button - Trigger/CV Utility",
             "description": "Multi-tool with probability, scaled random cv gen, a<>b switch, constant voltage, 0.2s-10s gate & trig out + text label. Slew&retrig menu options.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith#button-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#button",
             "tags": [
                 "Utility",
                 "Random",
@@ -30,7 +30,7 @@
             "slug": "BPMClk",
             "name": "BPM Clock",
             "description": "Lightweight BPM clock with run & reset. Master + 3 (/32 to x32) mult/div clock outputs. Meant for single row patches",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#clock",
             "tags": [
                 "Clock generator"
             ]
@@ -39,7 +39,7 @@
             "slug": "KnobX",
             "name": "Knobs - Const Voltage Source Sequencer",
             "description": "8CH Volt Bank with built-in sequencer. Probability, Playmodes, CH/Step number and knob range setting. Clk, Rst, Button in. Sequenced CV + Trig and static Poly out.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#knobs",
             "tags": [
                 "Utility",
                 "Sequencer",
@@ -50,7 +50,7 @@
             "slug": "GTSeq",
             "name": "Gate Length Sequencer",
             "description": "Sequences 6 Gates (0.1s-10s) with playmodes, probability, seq length, reset. For holding notes, envelopes and switches.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#gtseq",
             "tags": [
                 "Utility",
                 "Sequencer",
@@ -61,7 +61,7 @@
             "slug": "P2Seq",
             "name": "Poly to Sequence",
             "description": "Takes a polyphonic Input and sequences it to a clock (fwd, bwd, rnd). Step probability + add random probability with range.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#p2seq",
             "tags": [
                 "Utility",
                 "Sequencer",
@@ -73,7 +73,7 @@
             "slug": "VoltM",
             "name": "Volt Meter",
             "description": "Polyphonic Volt Meter. Inputs are merged to output.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#volt-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#volt",
             "tags": [
                 "Visual",
                 "Utility",
@@ -84,7 +84,7 @@
             "slug": "Note",
             "name": "Note Display",
             "description": "Displays the notes (& cents) of a polyphonic input. With quantization option (to semis) for the output. Displays: Note, Octave, Cent (ie: G#4 + 26)",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#volt-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#note",
             "tags": [
                 "Visual",
                 "Utility",
@@ -95,7 +95,7 @@
             "slug": "SH",
             "name": "Sample & Hold",
             "description": "S&H with min, max, channels and probability. #2s settings apply to #3. Probability applies seperately to each poly channel",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#sh-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#sh",
             "tags": [
                 "Sample and hold",
                 "Random",
@@ -106,7 +106,7 @@
             "slug": "Compare",
             "name": "Poly Comparator",
             "description": "Compares all channels from a polyphonic input with set threshold. Outputs Poly a<>b Gates and CV/Audio.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#comparator",
             "tags": [
                 "Logic",
                 "Limiter",
@@ -118,7 +118,7 @@
             "slug": "Merge",
             "name": "Polyphonic Merge",
             "description": "16 mono inputs can be merged into a polyphonic output.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#merge--split",
             "tags": [
                 "Utility",
                 "Polyphonic"
@@ -128,7 +128,7 @@
             "slug": "Split",
             "name": "Polyphonic Split",
             "description": "Splits a polyphonic input into monophonic outputs.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split-1",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#merge--split",
             "tags": [
                 "Utility",
                 "Polyphonic"
