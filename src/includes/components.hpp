@@ -170,18 +170,6 @@ struct ModeSwitch : app::SvgSwitch
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeSwitch2.svg")));
     }
 };
-struct ModeNum : app::SvgSwitch
-{
-    ModeNum()
-    {
-        shadow->opacity = 0.0;
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum0.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum1.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum2.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum3.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum4.svg")));
-    }
-};
 struct BTSwitch : app::SvgSwitch
 {
     BTSwitch()
@@ -210,17 +198,6 @@ struct SGBl : app::SvgSwitch
         shadow->opacity = 0.0;
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB0.svg")));
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB1.svg")));
-    }
-};
-struct BTbluesmall : app::SvgSwitch
-{
-    BTbluesmall()
-    {
-        momentary = false;
-        shadow->opacity = 0.0;
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall0.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall1.svg")));
-        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall2.svg")));
     }
 };
 ////////////////////////////////////////////////////////////////////////////////////
