@@ -23,23 +23,6 @@ struct Merge : Module
     };
 
     dsp::ClockDivider lightDivider;
-    int channels = -1;
-    int autoCh = 0;
-    int count = 0;
-
-    json_t *dataToJson() override
-    {
-        json_t *rootJ = json_object();
-        json_object_set_new(rootJ, "channels", json_integer(channels));
-        return rootJ;
-    }
-
-    void dataFromJson(json_t *rootJ) override
-    {
-        json_t *channelsJ = json_object_get(rootJ, "channels");
-        if (channelsJ)
-            channels = json_integer_value(channelsJ);
-    }
 
     Merge()
     {
@@ -49,53 +32,70 @@ struct Merge : Module
 
         configOutput(mOUT, "Polyphonic Merge");
         lightDivider.setDivision(512);
-        onReset();
     }
 
-    void onReset() override
-    {
-        channels = -1;
-    }
+    bool ch_overflow = false, MONOP = false;
+
     void process(const ProcessArgs &args) override
     {
-        int lastchannel = -1;
-
-        float w = 0.f;
         float deltaTime = args.sampleTime * lightDivider.getDivision();
-
-        for (int i = 0; i < 16; i++)
+        int chmax[16] = {0};
+        int ch_sum = 0;
+        ch_overflow = false;
+        if (!MONOP)
         {
-            float v = 0.f;
-            if (inputs[mIN + i].isConnected())
+            for (int i = 0; i < 16; i++)
             {
-                w = 1.f;
-                lastchannel = i;
-                v = inputs[mIN + i].getVoltage();
+                if (inputs[mIN + i].isConnected())
+                    chmax[i] = inputs[mIN + i].getChannels();
             }
-            else if (!inputs[mIN + i].isConnected())
-                w = 0.f;
 
-            if (channels == 0)
-                w = 0.f;
-            else if (channels > 0 && channels == i)
-                w = 1.f;
-            else if (channels > 0 && channels < i)
-                w = 0.f;
-
-            if (channels >= 0)
+            for (int n = 0; n < 16; n++)
             {
-                if (channels == 16)
-                    lights[mLED + 15].setSmoothBrightness(1.f, deltaTime);
-                else if (channels != 16)
-                    lights[mLED + 15].setSmoothBrightness(0.f, deltaTime);
-                lights[mLED + (i - 1)].setSmoothBrightness(w, deltaTime);
+                if (inputs[mIN + n].isConnected())
+                {
+                    for (int c = 0; c < chmax[n]; c++)
+                    {
+                        if (ch_sum < 16)
+                        {
+                            float volt = inputs[mIN + n].getVoltage(c);
+                            outputs[mOUT].setVoltage(volt, ch_sum);
+                        }
+                        else
+                        {
+                            ch_overflow = true;
+                            break;
+                        }
+                        ch_sum++;
+                    }
+                }
             }
-            else
-                lights[mLED + (i)].setSmoothBrightness(w, deltaTime);
-            outputs[mOUT].setVoltage(v, i);
         }
-        autoCh = lastchannel + 1;
-        outputs[mOUT].channels = ((channels >= 0) ? channels : (autoCh));
+        else if (MONOP)
+        {
+            for (int n = 0; n < 16; n++)
+            {
+                if (inputs[mIN + n].isConnected())
+                {
+                    float volt = inputs[mIN + n].getVoltage();
+                    outputs[mOUT].setVoltage(volt, n);
+                    ch_sum++;
+                }
+            }
+        }
+
+        if (ch_sum > 16)
+            ch_sum = 16;
+        // outputs
+        outputs[mOUT].channels = ch_sum;
+        int ch_p = outputs[mOUT].getChannels();
+        for (int y = 0; y < 16; y++)
+        {
+            if (y < ch_p)
+                lights[mLED + y].setSmoothBrightness(1.f, deltaTime);
+            else
+                lights[mLED + y].setSmoothBrightness(0.f, deltaTime);
+        }
     }
 };
 
@@ -131,25 +131,12 @@ struct MergeWidget : ModuleWidget
         topLabel->text = "MERGE";
         addChild(topLabel);
     }
-
     void appendContextMenu(Menu *menu) override
     {
         Merge *module = dynamic_cast<Merge *>(this->module);
 
-        menu->addChild(new MenuSeparator);
-
-        std::vector<std::string> channelLabels;
-        channelLabels.push_back(string::f("Automatic (%d)", module->autoCh));
-        for (int i = 0; i <= 16; i++)
-        {
-            channelLabels.push_back(string::f("%d", i));
-        }
-        menu->addChild(createIndexSubmenuItem(
-            "Channels", channelLabels,
-            [=]()
-            { return module->channels + 1; },
-            [=](int i)
-            { module->channels = i - 1; }));
+        menu->addChild(new MenuSeparator());
+        menu->addChild(createBoolPtrMenuItem("Monophonic Inputs Only", "", &module->MONOP));
     }
 };
 

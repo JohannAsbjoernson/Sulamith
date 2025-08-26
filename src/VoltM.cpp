@@ -44,6 +44,7 @@ struct VoltM : Module
 
 void VoltM::process(const ProcessArgs &args)
 {
+
     std::string strVAL2;
     float in1, in2, in3;
     int ch1, ch2, ch3, chab, chmix;
@@ -92,14 +93,14 @@ void VoltM::process(const ProcessArgs &args)
     }
 }
 
-struct StringDisplayWidget3 : Widget
+struct StringDisplayWidget : Widget
 {
 
     std::string value;
     std::shared_ptr<Font> font;
     VoltM *module;
 
-    StringDisplayWidget3()
+    StringDisplayWidget()
     {
         font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/Oswald-Regular.ttf"));
     };
@@ -129,7 +130,7 @@ struct VoltMWidget : ModuleWidget
         setModule(module);
         setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/panels/Panel3hp-dark.svg")));
 
-        StringDisplayWidget3 *stringDisplay = createWidget<StringDisplayWidget3>(Vec(6, 16));
+        StringDisplayWidget *stringDisplay = createWidget<StringDisplayWidget>(Vec(6, 16));
         stringDisplay->box.size = Vec(80, 220);
         stringDisplay->module = module;
         addChild(stringDisplay);

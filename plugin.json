@@ -1,12 +1,12 @@
 {
-    "slug": "Sulamith",
-    "name": "Sulamith",
+    "slug": "Sulamith2",
+    "name": "Sulamith2",
     "version": "2.1.0",
     "license": "GPL-3.0-or-later",
-    "brand": "Sulamith",
+    "brand": "Sulamith2",
     "author": "Pascal Breitenbach",
     "authorEmail": "johann@raisedasapackofwolves.de",
-    "pluginUrl": "https://library.vcvrack.com/?brand=Sulamith",
+    "pluginUrl": "https://github.com/JohannAsbjoernson/Sulamith",
     "authorUrl": "https://www.youtube.com/@johannasbjoernson918/featured",
     "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/blob/main/README.md",
     "sourceUrl": "https://github.com/JohannAsbjoernson/Sulamith",
@@ -15,8 +15,8 @@
         {
             "slug": "ButtonA",
             "name": "Button - Trigger/CV Utility",
-            "description": "Trigger and Gate utility with two OR-logic inputs. Features probability and custom gate length (0.2-10s). A/B section works as Toggle, Constant Voltage (1-10v), Bi- and Unipolar CV generation with range options. Context menu: Re-Trig can be disabled (i.e. to sync CV generation with custom length gates), Slew can be enabled for custom gates & cv gen.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith#button",
+            "description": "Multi-tool with probability, scaled random cv gen, a<>b switch, constant voltage, 0.2s-10s gate & trig out + text label. Slew&retrig menu options.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith#button-1",
             "tags": [
                 "Utility",
                 "Random",
@@ -27,10 +27,19 @@
             ]
         },
         {
+            "slug": "BPMClk",
+            "name": "BPM Clock",
+            "description": "Lightweight BPM clock with run & reset. Master + 3 (/32 to x32) mult/div clock outputs. Meant for single row patches",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "tags": [
+                "Clock generator"
+            ]
+        },
+        {
             "slug": "KnobX",
             "name": "Knobs - Const Voltage Source Sequencer",
-            "description": "8 channels/steps polyphonic voltage source, with range, step/ch control. Clock, button, reset in & 3 playmodes (FWD, BWD, RND) add sequencing options. Plugging a poly cable into reset 'steals' the incoming signal (synced to clock or button input). ",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs",
+            "description": "8CH Volt Bank with built-in sequencer. Probability, Playmodes, CH/Step number and knob range setting. Clk, Rst, Button in. Sequenced CV + Trig and static Poly out.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
             "tags": [
                 "Utility",
                 "Sequencer",
@@ -38,12 +47,69 @@
             ]
         },
         {
+            "slug": "GTSeq",
+            "name": "Gate Length Sequencer",
+            "description": "Sequences 6 Gates (0.1s-10s) with playmodes, probability, seq length, reset. For holding notes, envelopes and switches.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "tags": [
+                "Utility",
+                "Sequencer",
+                "Polyphonic"
+            ]
+        },
+        {
+            "slug": "P2Seq",
+            "name": "Poly to Sequence",
+            "description": "Takes a polyphonic Input and sequences it to a clock (fwd, bwd, rnd). Step probability + add random probability with range.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#knobs-1",
+            "tags": [
+                "Utility",
+                "Sequencer",
+                "Switch",
+                "Polyphonic"
+            ]
+        },
+        {
             "slug": "VoltM",
             "name": "Volt Meter",
-            "description": "Simple Polyphonic Volt Meter with 3 inputs that displays and merges up to 16 channels. Output works pitch perfect at audio rates - may be used as a poly merger.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#volt",
+            "description": "Polyphonic Volt Meter. Inputs are merged to output.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#volt-1",
             "tags": [
                 "Visual",
+                "Utility",
+                "Polyphonic"
+            ]
+        },
+        {
+            "slug": "Note",
+            "name": "Note Display",
+            "description": "Displays the notes (& cents) of a polyphonic input. With quantization option (to semis) for the output. Displays: Note, Octave, Cent (ie: G#4 + 26)",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#volt-1",
+            "tags": [
+                "Visual",
+                "Utility",
+                "Polyphonic"
+            ]
+        },
+        {
+            "slug": "SH",
+            "name": "Sample & Hold",
+            "description": "S&H with min, max, channels and probability. #2s settings apply to #3. Probability applies seperately to each poly channel",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#sh-1",
+            "tags": [
+                "Sample and hold",
+                "Random",
+                "Polyphonic"
+            ]
+        },
+        {
+            "slug": "Compare",
+            "name": "Poly Comparator",
+            "description": "Compares all channels from a polyphonic input with set threshold. Outputs Poly a<>b Gates and CV/Audio.",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main",
+            "tags": [
+                "Logic",
+                "Limiter",
                 "Utility",
                 "Polyphonic"
             ]
@@ -52,7 +118,7 @@
             "slug": "Merge",
             "name": "Polyphonic Merge",
             "description": "16 mono inputs can be merged into a polyphonic output.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split-1",
             "tags": [
                 "Utility",
                 "Polyphonic"
@@ -62,19 +128,10 @@
             "slug": "Split",
             "name": "Polyphonic Split",
             "description": "Splits a polyphonic input into monophonic outputs.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#merge--split-1",
             "tags": [
                 "Utility",
                 "Polyphonic"
-            ]
-        },
-        {
-            "slug": "AntifaQ",
-            "name": "Modular Antifa",
-            "description": "Alerta! Alerta! Check out the Antifacist Logo Archive on insta. Hardware Panel is sold by Tangible Waves.",
-            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main#blank",
-            "tags": [
-                "Blank"
             ]
         }
     ]

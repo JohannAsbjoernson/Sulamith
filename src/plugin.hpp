@@ -21,10 +21,18 @@ using namespace rack;
 extern Plugin *pluginInstance;
 
 extern Model *modelButtonA;
+extern Model *modelBPMClk;
 extern Model *modelVoltM;
+extern Model *modelSH;
 extern Model *modelKnobX;
-extern Model *modelAntifaQ;
+extern Model *modelGTSeq;
+extern Model *modelP2Seq;
+extern Model *modelCompare;
+extern Model *modelNote;
 extern Model *modelMerge;
 extern Model *modelSplit;
 //  just add new modules below in the same fashion.
 //  extern Model *modelCVSeq; etc.
+
+static const int displayAlpha = 23;
+NVGcolor prepareDisplay(NVGcontext *vg, Rect *box, int fontSize);

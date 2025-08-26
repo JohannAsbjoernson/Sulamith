@@ -242,7 +242,7 @@ struct KnobXWidget : ModuleWidget
         addParam(createLightParamCentered<VCVLightButton<MediumSimpleLight<WhiteLight>>>(Vec(col - 8, dis * 1), module, KnobX::CV_BT, KnobX::CV_BTLED));
         addParam(createParamCentered<ModeSwitch>(Vec(col + 13, dis * 1), module, KnobX::CV_MODE));
         addInput(createInputCentered<PJ301MPort>(Vec(col - 7, dis * 2), module, KnobX::CV_CLK));
-        addParam(createParamCentered<TrimpotSY>(Vec(col + 13, dis * 1.7), module, KnobX::CV_RND));
+        addParam(createParamCentered<TrimpotSG>(Vec(col + 13, dis * 1.7), module, KnobX::CV_RND));
         addInput(createInputCentered<PortDark>(Vec(col + 8, dis * 2.85), module, KnobX::CV_RES));
 
         addParam(createParamCentered<TrimpotSB>(Vec(col - 11.5, dis * 3.85), module, KnobX::CV_STEP));

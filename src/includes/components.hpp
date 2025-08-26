@@ -43,6 +43,14 @@ struct PJ301Mvar4 : app::SvgPort
         shadow->opacity = 0.1f;
     }
 };
+struct PJ301Mvar5 : app::SvgPort
+{
+    PJ301Mvar5()
+    {
+        setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ports/PJ301Mvar5.svg")));
+        shadow->opacity = 0.f;
+    }
+};
 struct PortDark : app::SvgPort
 {
     PortDark()
@@ -162,6 +170,18 @@ struct ModeSwitch : app::SvgSwitch
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeSwitch2.svg")));
     }
 };
+struct ModeNum : app::SvgSwitch
+{
+    ModeNum()
+    {
+        shadow->opacity = 0.0;
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum0.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum1.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum2.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum3.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/ModeNum4.svg")));
+    }
+};
 struct BTSwitch : app::SvgSwitch
 {
     BTSwitch()
@@ -180,6 +200,27 @@ struct SGB : app::SvgSwitch
         shadow->opacity = 0.0;
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB0.svg")));
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB1.svg")));
+    }
+};
+struct SGBl : app::SvgSwitch
+{
+    SGBl()
+    {
+        momentary = false;
+        shadow->opacity = 0.0;
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB0.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/SGB1.svg")));
+    }
+};
+struct BTbluesmall : app::SvgSwitch
+{
+    BTbluesmall()
+    {
+        momentary = false;
+        shadow->opacity = 0.0;
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall0.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall1.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/BTbluesmall2.svg")));
     }
 };
 ////////////////////////////////////////////////////////////////////////////////////
@@ -239,5 +280,41 @@ struct CenteredLabel : Widget
         nvgFillColor(args.vg, nvgRGB(0xff, 0xff, 0xff));
         nvgFontSize(args.vg, 9.f);
         nvgText(args.vg, box.pos.x, box.pos.y, text.c_str(), NULL);
+    }
+};
+
+struct TextDisplayWidget : TransparentWidget
+{
+    std::shared_ptr<Font> font;
+    std::string fontPath;
+    char displayStr[123];
+    std::string *text;
+    float fontSize = 13.f;
+
+    TextDisplayWidget(std::string *t)
+    {
+        text = t;
+        // uncomment this part to use your own font
+        fontPath = std::string(asset::plugin(pluginInstance, "res/fonts/Oswald-Regular.ttf"));
+    }
+
+    void drawLayer(const DrawArgs &args, int layer) override
+    {
+        if (layer == 1)
+        {
+            // uncomment this part & FontFaceId when setting your own font
+            if (!(font = APP->window->loadFont(fontPath)))
+                return;
+
+            Vec textPos = Vec(3.5, 2.5f);
+            nvgFontSize(args.vg, fontSize);
+            nvgFontFaceId(args.vg, font->handle);
+            nvgTextLetterSpacing(args.vg, 1.5);
+            // NVGcolor textColor = nvgRGB(0xff, 0xff, 0xff);
+            // nvgFillColor(args.vg, textColor);
+            nvgFillColor(args.vg, nvgRGB(0xff, 0xff, 0xff));
+            std::string displaytext = text ? text->c_str() : "";
+            nvgText(args.vg, textPos.x, textPos.y, displaytext.c_str(), NULL);
+        }
     }
 };

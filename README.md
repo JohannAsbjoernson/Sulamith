@@ -4,20 +4,28 @@
 
 ------------
 ### TABLE OF CONTENTS:
-### [BUTTON](#button)
-### [KNOBS](#knobs)
-### [VOLT](#volt)
-### [MERGE \& SPLIT](#merge--split)
-### [BLANK](#blank)
+- [SULAMITH](#sulamith)
+		- [USER MANUAL FOR VCV-RACK MODULE COLLECTION](#user-manual-for-vcv-rack-module-collection)
+		- [TABLE OF CONTENTS:](#table-of-contents)
+		- [TO-DO](#to-do)
+	- [BUTTON](#button)
+	- [CLOCK](#clock)
+	- [KNOBS](#knobs)
+	- [GTSEQ](#gtseq)
+	- [P2SEQ](#p2seq)
+	- [VOLT](#volt)
+	- [NOTE](#note)
+	- [S\&H](#sh)
+	- [COMPARATOR](#comparator)
+	- [MERGE \& SPLIT](#merge--split)
 
-### [TO-DO](#to-do)
+- [TO-DO](#to-do-1)
+
 
 ![Sulamith](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/SulamithOverview.jpg "Sulamith")
 
 ## BUTTON
 ![Button](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/001%20Button.jpg "Button")
-
-(NOTE: Button manual is out of date, changes will be incorporated sometime soon)
 
 **Button is a multi-functional trig-driven utility module.**
 - **Manual TRIG** button
@@ -32,6 +40,7 @@
 - **RETRIG** options in right-click menu
 - **SLEW** for **custom length Gates** in right-click menu
 - **SLEW** for **bi- and unipolar Random Voltages** in right-click menu
+- **RANDOM** mode (uniform, normal) in right-click menu
 
 **Buttons** can be used in many capacities:
 As a **Manual** and/or **CLK/TRG/GT** driven **Trigger generator, manual Gate, Trigger to Gate** converter, **Clock randomizer** (similar to a Bernoulli Gate), **constant Voltage** source, **on/off Toggle**, **Random Voltage generator** & **random trig/gate/cv/note Sequencer**, **slewed Gates** for opening VCAs, **slewed RND** for smoother modulation.
@@ -65,6 +74,16 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 ![Slew Curves](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/002%20Button.jpg "Slew Curves")
 
 ------------
+## CLOCK
+![Clock](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/004%20Clock.jpg "Clock")
+
+**Clock is a Master BPM Clock with 3 Divisions/Multipliers**
+- **ON/OFF** and **RESET** inputs
+- **BPM** 15-300
+- **Div** /32 to **Mult** x32
+- Four **Clock** outputs
+
+------------
 ## KNOBS
 ![Knobs](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/003%20Knobs.jpg "Knobs")
 
@@ -90,6 +109,31 @@ Randomization (CTRL+R) only affects the Knobs.
 Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply Probability to turn Knobs into a generative Sequencer.
 
 ------------
+## GTSEQ
+![GTSeq](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/005%20GTSeq.jpg "GTSeq")
+
+**Gate Length Sequencer with 6 0.1-10s gates, probability and playmodes.**
+- **TRIGGER** and **RESET** inputs
+- **PLAYMODES** forwards, backwards and random
+- **SEQUENCE LENGTH** dial (1-6)
+- **STEP PROBABILITY** (0%-100%)
+- 6 **GATES** from 0.1s to 10.0s
+
+------------
+## P2SEQ
+![P2Seq](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20P2Seq.jpg "P2Seq")
+
+**Polyphonic Signal to Sequence. Step Probability and Probability to add random CV with range dial.**
+- up to 16 **POLY CHANNELS** to mono sequence
+- **CLOCK** and **RESET** inputs
+- **PLAYMODES** forwards, backwards and random
+- **STEP PROBABILITY** (0%-100%)
+- **ADD RND CV PROBABILITY**
+- **RND CV RANGE**
+- **LED DISPLAY** if step is skipped, rnd cv added, 16 LED Matrix showing input channels and active step
+
+------------
+
 ## VOLT
 ![Volt](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/004%20Volt.jpg "Volt")
 
@@ -99,6 +143,41 @@ Use Stoermelder 8Face mk2 (preset sequences) and Strip (randomization) and apply
 - **Merging output** stacks incoming poly Signals
 
 ------------
+
+## NOTE
+![Note](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/007%20Note.jpg "Note")
+
+**Note is a polyphonic Note and Cent Display**
+- **Polyphonic input**
+- **Chromatic** mode quantizes signals to nearest note (to display and output)
+- **Display** for up to 16 notes
+
+------------
+
+## S&H
+![SH](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/008%20SH.jpg "SH")
+
+**Polyphonic Sample and Hold or Random CV Generator with 3 sections. **
+- **CLOCK/TRIG** and **SIGNAL** inputs
+- **BUTTON** to manually trigger S&H or RNG
+- **QUANTIZE** chromatic quantization (applies only to generated CV)
+- **RANGE A+B** set a min/max voltage for generated CV
+- Number of **CHANNELS**. Auto detects incoming Polyphony, dial can be set to custom 1-16 channels.
+- **PROBABILITY** 0-100% dictates if an incoming trigger is used to sample/generate or skipped.
+- **BOTTOM SECTION** copies settings of second section (quant, range, chan, prob)
+
+------------
+
+## COMPARATOR
+![Comp](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/009%20Comp.jpg "Comp")
+
+**Polyphonic Comparator compares input to a threshold. A outputs high when input is above, B when input is below threshold. Bottom outputs split the input signal into A: above and B: below threshold. Works at audio rate for hard limiting and splitting. Great for modulation of CV**
+- **THRESHOLD** with **CV** and **ATTENUATOR**
+- **A/B GATE** outputs
+- **A/B CV** outputs
+
+------------
+
 ## MERGE & SPLIT
 ![MergeSplit](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/005%20MergeSplit.jpg "MergeSplit")
 
@@ -110,26 +189,14 @@ ZigZagged ports & minimalistic design in 3hp, since something like this was miss
 Note: Merge -> Context Menu offers channel selection: -1 (Auto) & 0 to 16. For now you can only automate this using Stoermelders 8Face.
 Since the inputs are still monophonic at this point, the feature doesn't make much sense.
 
-------------
-## BLANK
-![Blank](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/006%20Blank.jpg "Blank")
-
-A **6hp Blank Panel** using an antifacist meme.
-Found in the **antifacist logo archive** on instagram, sold as stickers and buttons via **blackmosquito** and as hardware blank panel by **tangible waves**.
-[Tangible Waves Shop](https://www.tangiblewaves.com/store/p228/Blank_module_2U_%22MODULAR_ANTIFA%22.html "Tangible Waves")
-
 
 ------------
 
 #### TO-DO
-	Modules to add:
-	Comparator/Poly Signal Splitter
-	Poly 2 Mono Sequencer
-	Gate Length Sequencer
-
-	Comparator:
-	Context Menu: Polyphony sorting
-	Second Poly Signal in for swapping
+	Modules to add
+	Clock Divider
+	Logic
+	Preset/Clone
 
 	Knobs:
 	Context-Menu: Quantisation

@@ -1,5 +1,9 @@
 #Sulamith Modules: Changelog
 
+##version 2.2.0
+- removed Antifa Blank
+- added GTSeq, P2Seq, S&H, Comparator, Note
+
 ##version 2.1.0
 - added Antifa Blank
 - added Knobs - Const. volt source and Sequencer
