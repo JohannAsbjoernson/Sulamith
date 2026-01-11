@@ -212,7 +212,10 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 - **Oct1+** and **Oct2+** Gate ins with **Latching Buttons**
 - **DRY/WET** knob with **CV** input
 - **Stereo out**
+
 Originally developed by StochKit during VCV Betas, this is a less noisy and more hands-on version of the Effect.
+
+
 
 #### TO-DO
 	Modules to add
