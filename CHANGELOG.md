@@ -1,4 +1,7 @@
 #Sulamith Modules: Changelog
+##version 2.3.0
+- overhauled Clock Module per user request
+- added a remastered StochKit GenEcho module
 
 ##version 2.2.0
 - removed Antifa Blank

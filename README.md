@@ -17,6 +17,7 @@
 	- [S\&H](#sh)
 	- [COMPARATOR](#comparator)
 	- [MERGE \& SPLIT](#merge--split)
+	- [GENECHO](#genecho)
 	- [TO-DO](#to-do)
 
 
@@ -74,13 +75,15 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 [Back to Top](#table-of-contents)
 ------------
 ## CLOCK
-![Clock](https://github.com/JohannAsbjoernson/Sulamith/blob/main/manual/004%20Clock.jpg "Clock")
-
-**Clock is a Master BPM Clock with 3 Divisions/Multipliers**
-- **ON/OFF** and **RESET** inputs
+**Clock is a BPM driven Clock with 3 Divisions/Multipliers**
+- **ON/OFF** button
+- **ON/OFF**, **RESET** and **SYNC** inputs
 - **BPM** 15-300
-- **Div** /32 to **Mult** x32
+- **Div** /48 to **Mult** x48
 - Four **Clock** outputs
+- **right-click menu** with **Sync** options (Impromptu Clocked CV or 2/4/8/12/24 PPQN)
+Generally the sync is a bit unstable and requires regular resets when changing speeds. There is some drift that is noticeable at very high speeds.
+This module is based off of ShaBang's Polyrhythm Clock but has been heavily altered.
 
 [Back to Top](#table-of-contents)
 ------------
@@ -199,6 +202,16 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 [Back to Top](#table-of-contents)
 ------------
 
+## GENECHO
+**GENECHO is a stereo Glitch-Looping-Effect**
+- **Sample length** knob with **CV** input
+- **Stereo in** with **Gain Knob**
+- **Sample, Restart Sample, Delete** Trigger ins with **Buttons**
+- **Oct1+** and **Oct2+** Gate ins with **Latching Buttons**
+- **DRY/WET** knob with **CV** input
+- **Stereo out**
+Originally developed by StochKit during VCV Betas, this is a less noisy and more hands-on version of the Effect.
+
 #### TO-DO
 	Modules to add
 	Clock Divider
@@ -216,6 +229,10 @@ Since the inputs are still monophonic at this point, the feature doesn't make mu
 	Context-Menu: Slew all on/off
 	Panel: write whats what on it
 	Context-Menu: Add Global Settings
+
+	Note:
+	LED fix
+	Channels don't disappear fix
 
 MORE TO COME!
 

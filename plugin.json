@@ -29,7 +29,7 @@
         {
             "slug": "BPMClk",
             "name": "BPM Clock",
-            "description": "Lightweight BPM clock with run & reset. Master + 3 (/32 to x32) mult/div clock outputs. Meant for single row patches",
+            "description": "Lightweight BPM clock, 15-300 BPM, /48 to x48, Sync (see manual)",
             "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#clock",
             "tags": [
                 "Clock generator"
@@ -132,6 +132,16 @@
             "tags": [
                 "Utility",
                 "Polyphonic"
+            ]
+        },
+        {
+            "slug": "GenEcho",
+            "name": "GEN ECHO",
+            "description": "Overhauled stereo Glitch-Looping-Effect (originally from StochKit).",
+            "manualUrl": "https://github.com/JohannAsbjoernson/Sulamith/tree/main?tab=readme-ov-file#genecho",
+            "tags": [
+                "Effect",
+                "Delay"
             ]
         }
     ]
