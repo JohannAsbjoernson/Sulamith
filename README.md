@@ -82,9 +82,10 @@ Text-Input for **Label** shows 6 characters. Its shoddy coding (sorry) but works
 - **Div** /48 to **Mult** x48
 - Four **Clock** outputs
 - **right-click menu** with **Sync** options (Impromptu Clocked CV or 2/4/8/12/24 PPQN)
-**Notes**:
-- Generally the sync is a bit unstable and requires regular resets when changing speeds. There is some drift that is noticeable at very high speeds.
-- This module is based off of ShaBang's Polyrhythm Clock but has been heavily altered.
+
+**Notes**
+- Generally the **sync** is a bit unstable and requires regular resets when changing speeds. There is some drift that is noticeable at very high speeds.
+- This module is based off of **ShaBang's Polyrhythm Clock** but has been heavily altered.
 
 [Back to Top](#table-of-contents)
 ------------
