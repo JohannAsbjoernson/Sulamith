@@ -16,6 +16,7 @@ void init(Plugin *p)
     p->addModel(modelNote);
     p->addModel(modelMerge);
     p->addModel(modelSplit);
+    p->addModel(modelGenEcho);
 
     //   add new modules here
     //   p->addModel(modelSLUG);

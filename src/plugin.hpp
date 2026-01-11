@@ -31,6 +31,7 @@ extern Model *modelCompare;
 extern Model *modelNote;
 extern Model *modelMerge;
 extern Model *modelSplit;
+extern Model *modelGenEcho;
 //  just add new modules below in the same fashion.
 //  extern Model *modelCVSeq; etc.
 
