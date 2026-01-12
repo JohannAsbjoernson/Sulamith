@@ -213,6 +213,27 @@ struct WhiteButton : app::SvgSwitch
     }
 };
 
+struct WBsmall : app::SvgSwitch
+{
+    WBsmall()
+    {
+        shadow->opacity = 0.0;
+        momentary = true;
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall0.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall1.svg")));
+    }
+};
+struct WBsmallt : app::SvgSwitch
+{
+    WBsmallt()
+    {
+        shadow->opacity = 0.0;
+        momentary = false;
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall0.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall1.svg")));
+    }
+};
+
 ////////////////////////////////////////////////////////////////////////////////////
 // LIGHTS & COLOR SCHEMES
 template <typename Base = GrayModuleLightWidget>
