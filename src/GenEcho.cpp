@@ -294,10 +294,10 @@ void GenEcho::process(const ProcessArgs &args)
             sample2[s_i] = inB;
             if (s_i <= 8400)
             {
-                float sampleA[s_i] = {sample[s_i]};
+                float sampleA[s_i] = sample[s_i];
                 sample[s_i] *= 0.47;
                 sample[s_i] = slewlim.process(deltaTime, sampleA[s_i]);
-                float sampleB[s_i] = {sample2[s_i]};
+                float sampleB[s_i] = sample2[s_i];
                 sample2[s_i] *= 0.47;
                 sample2[s_i] = slewlim.process(deltaTime, sampleB[s_i]);
             }
@@ -396,5 +396,6 @@ struct GenEchoWidget : ModuleWidget
         addOutput(createOutputCentered<PJ301Mvar>(Vec(45.f, y * 14.6), module, GenEcho::R_OUTPUT));
     }
 };
+
 
 Model *modelGenEcho = createModel<GenEcho, GenEchoWidget>("GenEcho");
