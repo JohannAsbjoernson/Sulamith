@@ -1,6 +1,6 @@
 // GNU GENERAL PUBLIC LICENSE
 // Version 3, 29 June 2007
-// Shabang Clock
+// Based on Shabangs Polyrhythm Clock
 
 #include "plugin.hpp"
 
@@ -106,16 +106,6 @@ struct BPMClk : Module
                 phases[i] = 0.0;
             if (phases[i] == 0.0)
                 gatePulses[i].trigger(1e-3f);
-            // if (i > 0)
-            // {
-            //     if (phases[i] == 0.0)
-            //         gatePulses[i].trigger(1e-3f);
-            // }
-            // else
-            // {
-            //     if (phases[i] == 0.0)
-            //         gatePulses[i].trigger(1e-3f);
-            // }
         }
     }
 

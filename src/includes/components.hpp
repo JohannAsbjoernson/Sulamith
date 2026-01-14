@@ -231,6 +231,8 @@ struct WBsmallt : app::SvgSwitch
         momentary = false;
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall0.svg")));
         addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall1.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall2.svg")));
+        addFrame(Svg::load(asset::plugin(pluginInstance, "res/buttons/wbsmall3.svg")));
     }
 };
 
