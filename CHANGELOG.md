@@ -1,4 +1,8 @@
 #Sulamith Modules: Changelog
+##version 2.3.2
+- fixed compiler problem for mac users
+- reworked GenEcho for cleaner sound and effect
+
 ##version 2.3.0
 - overhauled Clock Module per user request
 - added a remastered StochKit GenEcho module
